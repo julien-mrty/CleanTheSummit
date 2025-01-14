@@ -94,7 +94,7 @@ Le fichier `.gitignore` a été mis à jour pour exclure des fichiers inutiles e
 .vs/
 
 # Unity Collaborate cache
-/Collab/
+/Collab/```
 
 ---
 ## Structure des Dossiers
