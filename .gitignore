@@ -67,11 +67,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Exclude large assets and shared folders
-/Assets/Models/
-/Assets/Textures/
-/Assets/Audio/
-/Assets/SharedAssets/
+# Exclude large asset files but keep folder structures
+/Assets/Models/*.fbx
+/Assets/Textures/*.png
+/Assets/Audio/*.wav
+/Assets/SharedAssets/**
 
 # XR plugin folders (if unused)
 /Assets/XR/XRPluginManagement/
