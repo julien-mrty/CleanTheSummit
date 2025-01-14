@@ -79,6 +79,8 @@ CleanTheSummit
 ├── README.md                 # Documentation du projet
 └── Documentation             # Notes et guides supplémentaires
     └── Rapport.pdf           # Rapport du projet
+
+
 - **`Assets/Scripts/`** : Tous les scripts C#.  
 - **`Assets/Scenes/`** : Scènes Unity (ex. `Scene_MainMenu.unity`, `Scene_Level1.unity`).  
 - **`Assets/Prefabs/`** : Objets réutilisables (ex. `PF_Trash`, `PF_Poubelle`).  
