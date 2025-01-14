@@ -31,7 +31,7 @@ Bienvenue sur le projet **Clean the Summit**. Ce projet VR a pour objectif de se
 
 Le projet est organisé comme suit :
 
----
+
 
 ```plaintext
 CleanTheSummit
@@ -85,42 +85,5 @@ CleanTheSummit
 - **`Assets/Models/`** : Fichiers 3D (.fbx, .obj…).  
 - **`Assets/Materials/`, `Assets/Textures/`, `Assets/Audio/`** : Organisation pour vos assets graphiques et sonores.  
 - **`Assets/XR/`** : Scripts et assets spécifiques à la réalité virtuelle (VR).  
-
----
-
-## Conventions de Nommage
-
-Afin de faciliter la collaboration, veuillez respecter les règles suivantes :
-
-- **Scripts (C#)**  
-  - Nom de classe : **PascalCase** (ex. `ScoreManager.cs`, `PlayerController.cs`).  
-  - Variables : **camelCase** (ex. `playerScore`, `maxItems`).  
-
-- **Assets graphiques**  
-  - **Prefabs** : `PF_NomObjet`, par ex. `PF_Trash`, `PF_Poubelle`.  
-  - **Matériaux** : `Mat_NomObjet`, par ex. `Mat_Rock`.  
-  - **Textures** : `Tex_NomObjet_Type`, par ex. `Tex_Rock_Albedo`, `Tex_Rock_Normal`.  
-  - **Modèles 3D** : `Model_NomObjet`, par ex. `Model_Rock.fbx`.  
-
-- **Scènes**  
-  - `Scene_NomScene`, par ex. `Scene_MainMenu`, `Scene_Level1`.
-
-L’objectif est de maintenir une cohérence et de rapidement identifier le type de fichier.
-
----
----
-
-## Workflow Git et Branches
-
-1. **Branche `main` ou `master`**  
-   - Contient la version stable du projet.
-
-2. **Branches de fonctionnalités**  
-   - Pour chaque fonctionnalité ou ajout d’assets, créez une branche dédiée :  
-     - Exemple : `feat/add-rock-assets`, `feat/gameplay-score`.
-
-3. **Pull Requests**  
-   - Ouvrez une Pull Request (PR) de votre branche vers `main`.  
-   - David (intégrateur Unity) valide et fusionne après relecture.
 
 ---
