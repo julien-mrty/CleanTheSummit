@@ -84,6 +84,4 @@ CleanTheSummit
 - **`Assets/Prefabs/`** : Objets réutilisables (ex. `PF_Trash`, `PF_Poubelle`).  
 - **`Assets/Models/`** : Fichiers 3D (.fbx, .obj…).  
 - **`Assets/Materials/`, `Assets/Textures/`, `Assets/Audio/`** : Organisation pour vos assets graphiques et sonores.  
-- **`Assets/XR/`** : Scripts et assets spécifiques à la réalité virtuelle (VR).  
-
----
+- **`Assets/XR/`** : Scripts et assets spécifiques à la réalité virtuelle (VR).
