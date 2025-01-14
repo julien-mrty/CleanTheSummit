@@ -1,4 +1,14 @@
+<<<<<<< HEAD
+# Custom add
+*.apk
+
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+=======
 # Unity auto-generated files
+>>>>>>> 59a182c12a7fb16d411ac34214f84e186763b395
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
