@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.XR.PXR; // PicoXR namespace
 
 public class MovePlayer : MonoBehaviour
 {
 
-    public float walkingSpeed = 2.0f; // Movement speed
+    public float moveSpeed = 2.0f; // Movement speed
     Rigidbody rb; //Reference the rigid body attached to the object "PlayerObj" of the object Player
-
-    Vector3 moveDirection;
-    public float horizontalInput;
-    public float verticalInput;
     public Transform orientation; //Attached to the object "Player". Used to store the player's orientation. This follows the movement of the camera
 
 
@@ -24,14 +21,18 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get input axes
-        horizontalInput = Input.GetAxisRaw("Horizontal"); //can be -1, 0 or 1 
-        verticalInput = Input.GetAxisRaw("Vertical"); //can be -1, 0 or 1 
+        // Get touchpad axes (joystick-like input)
+        float horizontal = PXR_Input.GetAxis2D(PXR_Input.Controller.RightController, PXR_Input.Axis2D.PrimaryTouchpad).x;
+        float vertical = PXR_Input.GetAxis2D(PXR_Input.Controller.RightController, PXR_Input.Axis2D.PrimaryTouchpad).y;
 
-        // Calculate movement vector
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        // Calculate movement direction
+        Vector3 moveDirection = orientation.forward * vertical + orientation.right * horizontal;
 
-        // Move the Rigidbody
-        rb.AddForce(moveDirection.normalized * walkingSpeed, ForceMode.Force);
+        // Normalize the movement vector to maintain consistent speed in diagonal directions
+        moveDirection = moveDirection.normalized;
+
+        // Apply movement force
+        Vector3 force = moveDirection * moveSpeed * Time.deltaTime; // Calculate force
+        rb.MovePosition(rb.position + force); // Update position
     }
 }
