@@ -4,21 +4,6 @@ Bienvenue sur le projet **Clean the Summit**. Ce projet VR a pour objectif de se
 
 ---
 
-## Sommaire
-
-1. [Version Unity](#version-unity)  
-2. [Structure des Dossiers](#structure-des-dossiers)  
-3. [Conventions de Nommage](#conventions-de-nommage)  
-4. [Workflow Git et Branches](#workflow-git-et-branches)  
-5. [Fichier `.gitignore`](#fichier-gitignore)  
-6. [Rôles et Responsabilités](#rôles-et-responsabilités)  
-7. [Partie 7 : Intégration des Assets Graphiques](#partie-7--intégration-des-assets-graphiques)  
-8. [Historique des Scores & Mode Débug](#historique-des-scores--mode-débug)  
-9. [Comment Contribuer](#comment-contribuer)  
-10. [Support & Contact](#support--contact)
-
----
-
 ## Version Unity
 
 - **Version recommandée** : `Unity 2020.3.33f1`.  
