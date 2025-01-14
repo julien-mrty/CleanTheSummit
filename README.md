@@ -69,7 +69,7 @@ Le fichier `.gitignore` a été mis à jour pour exclure des fichiers inutiles e
    - Dossier `/Assets/XR/XRPluginManagement/` ajouté si inutilisé.
 
 
-###Voici un extrait du fichier `.gitignore` mis à jour :
+#### Voici un extrait du fichier `.gitignore` mis à jour :
 
 ```plaintext
 # Unity auto-generated files
