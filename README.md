@@ -45,6 +45,56 @@ L’objectif est de maintenir une cohérence et de rapidement identifier le type
 3. **Pull Requests**  
    - Ouvrez une Pull Request (PR) de votre branche vers `main`.  
    - David (intégrateur Unity) valide et fusionne après relecture.
+---
+## Mise à Jour du .gitignore
+
+### Objectif
+Le fichier `.gitignore` a été mis à jour pour exclure des fichiers inutiles et volumineux du dépôt, tout en documentant les meilleures pratiques pour que l'équipe puisse travailler de manière efficace.
+
+### Changements Apportés
+
+1. **Exclusion des fichiers générés automatiquement par Unity :**
+   - Exclusion des dossiers `Library`, `Temp`, `Logs`, `UserSettings` et autres fichiers temporaires.
+   - Ces fichiers sont générés automatiquement par Unity et ne doivent pas être versionnés.
+
+2. **Gestion des Assets Lourds :**
+   - Les dossiers contenant des fichiers volumineux (modèles 3D, textures, audio) sont exclus.
+   - Exemple : `/Assets/Models/`, `/Assets/Textures/`, `/Assets/Audio/`.
+
+3. **Exclusion des Plugins Tiers et des Caches :**
+   - Plugins tiers non utilisés (exemple : JetBrains Rider, Collaborate cache).
+   - Dossier `.vs/` pour Visual Studio.
+
+4. **Support pour XR et VR/AR :**
+   - Dossier `/Assets/XR/XRPluginManagement/` ajouté si inutilisé.
+
+
+###Voici un extrait du fichier `.gitignore` mis à jour :
+
+```plaintext
+# Unity auto-generated files
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Large assets
+/Assets/Models/
+/Assets/Textures/
+/Assets/Audio/
+/Assets/SharedAssets/
+
+# XR plugin folders (if unused)
+/Assets/XR/XRPluginManagement/
+
+# Visual Studio cache
+.vs/
+
+# Unity Collaborate cache
+/Collab/
 
 ---
 ## Structure des Dossiers
