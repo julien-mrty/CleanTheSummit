@@ -78,6 +78,9 @@ crashlytics-build.properties
 # Inclure tous les .meta
 !/Assets/**/*.meta
 
+# Inclure les .gitkeep pour dossiers vides
+!/Assets/**/*.gitkeep
+
 # Inclure Scripts
 !/Assets/Scripts/**
 
