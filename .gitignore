@@ -1,21 +1,13 @@
-<<<<<<< HEAD
-# Custom add
-*.apk
-
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
-=======
+# ==================================
 # Unity auto-generated files
->>>>>>> 59a182c12a7fb16d411ac34214f84e186763b395
+# ==================================
 /[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 /[Mm]emoryCaptures/
@@ -53,11 +45,6 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-# Unity3D generated meta files
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
-
 # Unity3D generated file on crash reports
 sysinfo.txt
 
@@ -77,14 +64,34 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Exclude large asset files but keep folder structures
-/Assets/Models/*.fbx
-/Assets/Textures/*.png
-/Assets/Audio/*.wav
-/Assets/SharedAssets/**
+# ==================================
+# Exclure tous les assets
+# ==================================
+/Assets/**
 
-# XR plugin folders (if unused)
-/Assets/XR/XRPluginManagement/
+# ==================================
+# Inclure exceptions :
+#  - Fichiers .meta
+#  - Scripts, scènes, prefabs, UI, ressources et plugins
+# ==================================
 
-# Unity Collaborate cache
-/Collab/
+# Inclure tous les .meta
+!/Assets/**/*.meta
+
+# Inclure Scripts
+!/Assets/Scripts/**
+
+# Inclure Scenes
+!/Assets/Scenes/**
+
+# Inclure Prefabs
+!/Assets/Prefabs/**
+
+# Inclure UI
+!/Assets/UI/**
+
+# Inclure Resources
+!/Assets/Resources/**
+
+# Inclure Plugins
+!/Assets/Plugins/**
