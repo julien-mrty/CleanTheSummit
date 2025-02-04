@@ -67,7 +67,7 @@ crashlytics-build.properties
 # ==================================
 # Exclure tous les assets
 # ==================================
-/Assets/**
+#/Assets/**
 
 # ==================================
 # Inclure exceptions :
