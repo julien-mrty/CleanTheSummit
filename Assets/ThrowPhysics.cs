@@ -8,7 +8,7 @@ public class ThrowPhysics : MonoBehaviour
     private Rigidbody rb;
     private XRGrabInteractable grabInteractable;
 
-    public float throwForce = 5f; // Force horizontale
+    public float throwForce = 5f;  // Force horizontale
     public float upwardForce = 2f; // Force verticale
 
     void Start()
@@ -16,23 +16,38 @@ public class ThrowPhysics : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         grabInteractable = GetComponent<XRGrabInteractable>();
 
-        // Détection du relâchement de l'objet
         grabInteractable.onSelectExit.AddListener(OnRelease);
     }
 
     private void OnRelease(XRBaseInteractor interactor)
     {
-        if (rb != null)
+        if (rb == null) return;
+
+        Transform attachTransform = null;
+
+        XRDirectInteractor directInteractor = interactor as XRDirectInteractor;
+        if (directInteractor != null)
         {
-            // Calcul de la direction avec une composante verticale
-            Vector3 direction = interactor.transform.forward + Vector3.up * 0.3f;
-            rb.velocity = direction.normalized * throwForce + Vector3.up * upwardForce;
-
-            // Empêcher des rotations excessives
-            rb.angularVelocity = Vector3.zero;
-
-            // Debug de la trajectoire
-            Debug.DrawRay(transform.position, rb.velocity, Color.red, 2f);
+            attachTransform = directInteractor.attachTransform;
         }
+        else
+        {
+            XRRayInteractor rayInteractor = interactor as XRRayInteractor;
+            if (rayInteractor != null)
+                attachTransform = rayInteractor.attachTransform;
+        }
+
+        if (attachTransform == null)
+            attachTransform = interactor.transform;
+
+        Vector3 direction = attachTransform.forward + Vector3.up * 0.3f;
+
+        rb.velocity = direction.normalized * throwForce + Vector3.up * upwardForce;
+
+        // Empêcher les rotations excessives
+        rb.angularVelocity = Vector3.zero;
+
+        // Debug
+        Debug.DrawRay(transform.position, rb.velocity, Color.red, 2f);
     }
 }
