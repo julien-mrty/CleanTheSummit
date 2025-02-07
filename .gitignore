@@ -59,14 +59,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# ==================================
-# Exclure les fichiers volumineux
-# ==================================
-/Assets/Materials/*
-/Assets/Models/*
-/Assets/Textures/*
-/Assets/Audio/*
-/Assets/Environment/*
+
 
 # ==================================
 # Autoriser les fichiers essentiels à Unity
@@ -77,15 +70,11 @@ crashlytics-build.properties
 # ✅ INCLURE les .gitkeep pour garder les dossiers vides
 !/Assets/**/*.gitkeep
 
-# ✅ INCLURE les fichiers nécessaires au jeu
-!/Assets/Scripts/**
-!/Assets/Scenes/**
-!/Assets/Prefabs/**
-!/Assets/UI/**
-!/Assets/Resources/**
-!/Assets/Plugins/**
-!/Assets/Materials/*
-!/Assets/Textures/*
+# Exclure uniquement les fichiers .psd et .png 
+/Assets/**/*.psd
+/Assets/**/*.png
+/Assets/**/*fbx
 
 # Exclure rclone CLI tool
 /rclone-v1.69.0-windows-amd64/
+
