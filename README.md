@@ -107,47 +107,76 @@ Le projet est organisé comme suit :
 ```plaintext
 CleanTheSummit
 ├── Assets
-│   ├── Scripts               # Contient tous les scripts de gameplay et système
-│   │   ├── Gameplay          # Scripts liés aux mécaniques du jeu (ex : ScoreManager.cs)
-│   │   ├── UI                # Scripts pour l'interface utilisateur (ex : MenuController.cs)
-│   │   └── Debug             # Scripts pour le mode debug (ex : DebugConsole.cs)
-│   ├── Scenes                # Contient toutes les scènes Unity du projet
-│   │   ├── MainMenu.unity    # Menu principal
-│   │   ├── Level1.unity      # Niveau 1
-│   │   ├── Level2.unity      # Niveau 2
-│   │   └── Level3.unity      # Niveau 3
-│   ├── Prefabs               # Préfabriqués pour réutilisation
-│   │   ├── Trash             # Objets déchet (bouteilles, boîtes, etc.)
-│   │   ├── Environment       # Éléments de décor (roches, arbres, etc.)
-│   │   └── Interactive       # Objets interactifs (poubelles, obstacles, etc.)
-│   ├── Models                # Modèles 3D utilisés dans le jeu
-│   │   ├── Characters        # Modèles 3D des personnages
-│   │   └── Environment       # Modèles 3D des éléments de l'environnement
-│   ├── Textures              # Textures appliquées aux modèles et matériaux
-│   ├── Materials             # Matériaux pour les objets 3D
-│   ├── Audio                 # Fichiers audio
-│   │   ├── UI                # Sons pour les interactions utilisateur
-│   │   ├── Feedback          # Sons de feedback (ex : prise d'objet, mauvais tri)
-│   │   └── Environment       # Sons diégétiques (vent, neige, avalanche)
-│   ├── UI                    # Éléments d'interface utilisateur
-│   │   ├── Buttons           # Boutons et icônes
-│   │   └── Panels            # Panneaux et fenêtres
-│   ├── Animation             # Animations pour les personnages et objets
-│   ├── Resources             # Fichiers accessibles à runtime
-│   │   └── Data              # Données sauvegardées (scores, paramètres)
-│   ├── Plugins               # Scripts ou plugins tiers
-│   ├── Environment           # Assets liés à l'environnement (roches, neige, tentes)
-│   └── XR                    # Ressources spécifiques pour la VR/AR
-│       ├── Menu              # Menu XR et fenêtres immersives
-│       └── Interaction       # Scripts et prefabs pour l'interaction XR
-├── Library                   # Dossier généré automatiquement par Unity
-├── Logs                      # Logs pour débogage
-├── Packages                  # Gestionnaire de packages Unity
-├── ProjectSettings           # Paramètres du projet Unity
-├── Temp                      # Fichiers temporaires générés par Unity
-├── UserSettings              # Paramètres utilisateur Unity
-├── .gitignore                # Fichier pour ignorer les fichiers inutiles dans le versionnement
-├── README.md                 # Documentation du projet
-└── Documentation             # Notes et guides supplémentaires
-    └── Rapport.pdf           # Rapport du projet
+│   ├── Animation               # Animations utilisées dans le projet
+│   ├── Audio                   # Sons du projet
+│   │   ├── Environment         # Sons d'ambiance (vent, neige, nature, etc.)
+│   │   ├── Feedback            # Sons de feedback utilisateur (ex : prise d'objet)
+│   │   └── UI                  # Sons de l'interface utilisateur (boutons, menus, etc.)
+│   ├── LucirgoSoft             # Assets venant du pack LucirgoSoft
+│   │   └── LCRG Montains       # Pack montagne
+│   ├── Materials               # Matériaux du projet
+│   │   ├── Mont_Materials      # Matériaux spécifiques aux montagnes
+│   │   ├── Mountain_Snow_Materials  # Matériaux pour la neige
+│   │   └── Polygon-Lite Survival_Materials  # Matériaux du pack Polygon-Lite
+│   ├── Models                  # Modèles 3D
+│   │   ├── Characters          # Modèles 3D des personnages
+│   │   └── Environment         # Modèles 3D de l’environnement
+│   │       └── Mont_Fbx        # Modèles 3D liés aux montagnes
+│   ├── Plugins                 # Scripts ou plugins tiers
+│   ├── Polygon-Lite Survival Collection # Pack d'assets Polygon-Lite
+│   │   ├── Demo_Day_Profiles   # Profils de lumière ou post-processing
+│   │   ├── Models              # Modèles 3D
+│   │   ├── Prefabs             # Prefabs liés au pack
+│   │   ├── Scenes              # Scènes de démonstration du pack
+│   │   │   └── Demonstration   # Scène de test fournie avec le pack
+│   │   └── Textures            # Textures du pack
+│   ├── Prefabs                 # Objets préfabriqués (réutilisables)
+│   │   ├── Environment         # Éléments de décor
+│   │   │   ├── Mountain_Prefabs # Montagnes en prefab
+│   │   │   └── Mountain_Snows_Prefab  # Montagnes enneigées en prefab
+│   │   ├── Interactive         # Objets interactifs (poubelles, obstacles, etc.)
+│   │   └── Trash               # Objets de type déchets
+│   ├── Resources               # Contient des fichiers accessibles à runtime
+│   │   └── Data                # Données sauvegardées (scores, paramètres)
+│   ├── Scenes                  # Contient toutes les scènes Unity
+│   │   ├── Montain_Scene       # Scène spécifique aux montagnes
+│   │   │   └── anim            # Animations spécifiques aux scènes montagne
+│   │   └── Mountain_Snow_Scenes # Scènes enneigées
+│   ├── Scripts                 # Scripts du projet
+│   │   ├── Debug               # Scripts liés aux outils de debug
+│   │   ├── Gameplay            # Scripts des mécaniques du jeu
+│   │   └── UI                  # Scripts pour l'interface utilisateur
+│   ├── Snow Mountain           # Contient des assets de neige/montagne
+│   │   └── Source
+│   │       ├── cubemap         # Images utilisées pour les ciels en cubemap
+│   │       ├── fbx             # Modèles 3D en FBX
+│   │       │   └── Materials   # Matériaux liés aux modèles FBX
+│   │       └── tga             # Textures en format TGA
+│   ├── Standard Assets         # Assets standards Unity
+│   │   └── Prototyping         # Assets de prototypage Unity (textures, modèles, etc.)
+│   │       ├── Materials       # Matériaux
+│   │       ├── Models          # Modèles 3D
+│   │       ├── Prefabs         # Objets préfabriqués
+│   │       └── Textures        # Textures
+│   ├── Textures                # Contient toutes les textures
+│   │   ├── Mont_Textures       # Textures des montagnes
+│   │   └── Tree_Textures       # Textures spécifiques aux arbres
+│   ├── UI                      # Éléments de l’interface utilisateur
+│   │   ├── Buttons             # Boutons et icônes
+│   │   └── Panels              # Panneaux et fenêtres
+│   └── XR                      # Ressources spécifiques à la réalité virtuelle (VR)
+│       ├── Menu                # Menu XR et interfaces immersives
+│       │   └── Loaders         # Gestion des scènes et du chargement
+│       ├── Interaction         # Scripts et prefabs pour l'interaction XR
+│       │   └── Settings        # Paramètres XR spécifiques
+├── Documentation               # Contient la documentation du projet
+├── Library                     # Dossier généré automatiquement par Unity
+├── Logs                        # Logs pour le débogage
+├── Packages                    # Gestionnaire de packages Unity
+├── ProjectSettings             # Paramètres du projet Unity
+├── Temp                        # Fichiers temporaires générés par Unity
+├── UserSettings                # Paramètres utilisateur Unity
+├── rclone-v1.69.0-windows-amd64 # Dossier d’outil à ignorer dans Git
+└── README.md                   # Documentation du projet
+
 
