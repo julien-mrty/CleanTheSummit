@@ -3,7 +3,7 @@ name: Sync Assets to Google Drive
 on:
   push:
     branches:
-      - main  # Ou remplace par la branche que tu utilises
+      - main  # Déclenchement sur push dans main
 
 jobs:
   upload_assets:
@@ -20,7 +20,12 @@ jobs:
     - name: Configure Rclone
       run: |
         mkdir -p ~/.config/rclone
-        echo "${{ secrets.RCLONE_CONFIG }}" > ~/.config/rclone/rclone.conf
+        echo "${{ secrets.RCLONE_CONFIG }}" | base64 --decode > ~/.config/rclone/rclone.conf
+
+    - name: Test Rclone Configuration
+      run: |
+        cat ~/.config/rclone/rclone.conf  # Vérifie que le fichier est bien créé
+        rclone listremotes  # Vérifie que "asset_gdrive" est reconnu
 
     - name: Upload Assets to Google Drive
       run: |
