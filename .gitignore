@@ -85,6 +85,7 @@ crashlytics-build.properties
 !/Assets/Resources/**
 !/Assets/Plugins/**
 !/Assets/Materials/*
+!/Assets/Textures/*
 
 # Exclure rclone CLI tool
 /rclone-v1.69.0-windows-amd64/
