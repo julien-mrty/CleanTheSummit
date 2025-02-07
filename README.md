@@ -72,29 +72,40 @@ Le fichier `.gitignore` a été mis à jour pour exclure des fichiers inutiles e
 #### Voici un extrait du fichier `.gitignore` mis à jour :
 
 ```plaintext
-# Unity auto-generated files
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+# ==================================
+# Exclure tous les assets
+# ==================================
+/Assets/**
 
-# Large assets
-/Assets/Models/
-/Assets/Textures/
-/Assets/Audio/
-/Assets/SharedAssets/
+# ==================================
+# Inclure exceptions :
+#  - Fichiers .meta
+#  - Scripts, scènes, prefabs, UI, ressources et plugins
+# ==================================
 
-# XR plugin folders (if unused)
-/Assets/XR/XRPluginManagement/
+# Inclure tous les .meta
+!/Assets/**/*.meta
 
-# Visual Studio cache
-.vs/
+# Inclure les .gitkeep pour dossiers vides
+!/Assets/**/*.gitkeep
 
-# Unity Collaborate cache
-/Collab/
+# Inclure Scripts
+!/Assets/Scripts/**
+
+# Inclure Scenes
+!/Assets/Scenes/**
+
+# Inclure Prefabs
+!/Assets/Prefabs/**
+
+# Inclure UI
+!/Assets/UI/**
+
+# Inclure Resources
+!/Assets/Resources/**
+
+# Inclure Plugins
+!/Assets/Plugins/**
 ```
 
 ---
