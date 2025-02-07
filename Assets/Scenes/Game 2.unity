@@ -859,7 +859,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -934,8 +934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b633d86dd5d6144b91ff3371092976c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
-  upwardForce: 2
+  throwForce: 6
+  upwardForce: 3
 --- !u!1 &457565642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -1446,8 +1446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b633d86dd5d6144b91ff3371092976c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
-  upwardForce: 2
+  throwForce: 6
+  upwardForce: 3
 --- !u!1001 &832072548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -2679,8 +2679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b633d86dd5d6144b91ff3371092976c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 5
-  upwardForce: 2
+  throwForce: 6
+  upwardForce: 3
 --- !u!1001 &2033757082
 PrefabInstance:
   m_ObjectHideFlags: 0
