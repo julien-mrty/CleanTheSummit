@@ -1,0 +1,27 @@
+name: Sync Assets to Google Drive
+
+on:
+  push:
+    branches:
+      - main  # Ou remplace par la branche que tu utilises
+
+jobs:
+  upload_assets:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Rclone
+      run: |
+        curl https://rclone.org/install.sh | sudo bash
+
+    - name: Configure Rclone
+      run: |
+        mkdir -p ~/.config/rclone
+        echo "${{ secrets.RCLONE_CONFIG }}" > ~/.config/rclone/rclone.conf
+
+    - name: Upload Assets to Google Drive
+      run: |
+        rclone sync Assets asset_gdrive:/UnityProjectAssets --progress
