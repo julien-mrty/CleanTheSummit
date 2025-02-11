@@ -18,6 +18,7 @@ public class TrashBin : MonoBehaviour
             if (trash.trashType == acceptedTrashType)
             {
                 Debug.Log("Objet trié correctement : " + trash.trashType);
+                ScoreManager.Instance.AddScore(1);
                 Destroy(other.gameObject); // Détruire l'objet
             }
             else
