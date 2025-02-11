@@ -73,12 +73,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Exclude large asset files but keep folder structures
-/Assets/Models/*.fbx
-/Assets/Textures/*.png
-/Assets/Audio/*.wav
-/Assets/SharedAssets/**
-
 # XR plugin folders (if unused)
 /Assets/XR/XRPluginManagement/
 
@@ -91,13 +85,6 @@ crashlytics-build.properties
 
 # ✅ INCLURE les .gitkeep pour garder les dossiers vides
 !/Assets/**/*.gitkeep
-
-# Exclure uniquement les fichiers .psd et .png 
-/Packages/*
-/Assets/**/*.psd
-/Assets/**/*.png
-/Assets/**/*fbx
-
 
 # Exclure rclone CLI tool
 /rclone-v1.69.0-windows-amd64/
