@@ -132,7 +132,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/mburill/Documents/PicoXR_Platform_SDK-1.2.5_B81",
+      "version": "file:C:/Users/julie/Desktop/All/Important/Polytech/Inge_3/VR/Unity packages/Latest",
       "depth": 0,
       "source": "local",
       "dependencies": {
