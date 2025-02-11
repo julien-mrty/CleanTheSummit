@@ -82,6 +82,26 @@ crashlytics-build.properties
 # XR plugin folders (if unused)
 /Assets/XR/XRPluginManagement/
 
+# ==================================
+# Autoriser les fichiers essentiels à Unity
+# ==================================
+# ✅ INCLURE tous les fichiers .meta !
+!/Assets/**/*.meta
+
+# ✅ INCLURE les .gitkeep pour garder les dossiers vides
+!/Assets/**/*.gitkeep
+
+# Exclure uniquement les fichiers .psd et .png 
+/Packages/*
+/Assets/**/*.psd
+/Assets/**/*.png
+/Assets/**/*fbx
+
+
+# Exclure rclone CLI tool
+/rclone-v1.69.0-windows-amd64/
 # Unity Collaborate cache
 /Collab/
+
+/Packages/
 
