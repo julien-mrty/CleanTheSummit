@@ -87,6 +87,7 @@ crashlytics-build.properties
 # ==================================
 # ✅ INCLURE tous les fichiers .meta !
 !/Assets/**/*.meta
+!*.meta
 
 # ✅ INCLURE les .gitkeep pour garder les dossiers vides
 !/Assets/**/*.gitkeep
