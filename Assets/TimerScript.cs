@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    public float totalTime = 60f;       // DurÈe du timer en secondes
+    public float totalTime = 60f;       // Dur√©e du timer en secondes
     public TextMeshProUGUI timeText;
 
     private float timeLeft;
+    private bool timerEnded = false; // V√©rification pour ne jouer le son qu'une seule fois
+
+    public AudioSource audioSource;  // Ajout de l'AudioSource
+    public AudioClip endSound;       // Son √† jouer quand le timer est termin√©
 
     void Start()
     {
@@ -19,15 +22,33 @@ public class TimerScript : MonoBehaviour
 
     void Update()
     {
-        // RÈduire le temps restant en fonction du temps ÈcoulÈ
+        // R√©duire le temps restant en fonction du temps √©coul√©
         timeLeft -= Time.deltaTime;
 
-        // Bloquer pour Èviter d'afficher un temps nÈgatif
+        // Bloquer pour √©viter d'afficher un temps n√©gatif
         if (timeLeft < 0f)
             timeLeft = 0f;
 
-        // Mettre ‡ jour l'affichage
-        // Par exemple, on arrondit ‡ l'entier avec .ToString("0")
+        // Mettre √† jour l'affichage
         timeText.text = "Time: " + timeLeft.ToString("0");
+
+        // V√©rifier si le temps est √©coul√© et jouer le son une seule fois
+        if (timeLeft <= 0f && !timerEnded)
+        {
+            timerEnded = true;
+            PlayEndSound();
+        }
+    }
+
+    private void PlayEndSound()
+    {
+        if (audioSource != null && endSound != null)
+        {
+            audioSource.PlayOneShot(endSound);
+        }
+        else
+        {
+            Debug.LogWarning("Aucun son assign√© pour la fin du timer !");
+        }
     }
 }

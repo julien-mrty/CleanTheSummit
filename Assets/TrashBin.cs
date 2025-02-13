@@ -4,28 +4,61 @@ using UnityEngine;
 
 public class TrashBin : MonoBehaviour
 {
-    public string acceptedTrashType; // Le type de déchet accepté (ex : "Pizza", "Pomme")
-    public ParticleSystem successParticles; // Référence au système de particules
+    public string acceptedTrashType; // Type de dÃ©chet acceptÃ© (ex: "Pizza", "Pomme")
+    public ParticleSystem successParticles; // Particules en cas de succÃ¨s
+
+    public AudioSource audioSource; // Source audio
+    public AudioClip successSound; // Son pour un tri rÃ©ussi
+    public AudioClip failureSound; // Son pour un Ã©chec
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        // Vérifier si l'objet entrant a un script TrashItem
         TrashItem trash = other.GetComponent<TrashItem>();
 
         if (trash != null)
         {
-            // Vérifier si le type correspond
             if (trash.trashType == acceptedTrashType)
             {
-                Debug.Log("Objet trié correctement : " + trash.trashType);
+                Debug.Log("Objet triÃ© correctement : " + trash.trashType);
                 ScoreManager.Instance.AddScore(1);
-                Destroy(other.gameObject); // Détruire l'objet
+
+                // Jouer le son de succÃ¨s
+                PlaySuccessSound();
+
+                // DÃ©clencher les particules si disponibles
+                if (successParticles != null)
+                    successParticles.Play();
+
+                Destroy(other.gameObject); // DÃ©truire l'objet
             }
             else
             {
                 Debug.Log("Mauvaise poubelle pour : " + trash.trashType);
-                // Tu peux ajouter un effet d'erreur ici (par exemple, un son ou un message visuel)
+
+                // Jouer le son dâ€™Ã©chec
+                PlayFailureSound();
             }
+        }
+    }
+
+    private void PlaySuccessSound()
+    {
+        if (audioSource != null && successSound != null)
+        {
+            audioSource.PlayOneShot(successSound);
+        }
+    }
+
+    private void PlayFailureSound()
+    {
+        if (audioSource != null && failureSound != null)
+        {
+            audioSource.PlayOneShot(failureSound);
         }
     }
 }

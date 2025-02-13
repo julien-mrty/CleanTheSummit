@@ -11,10 +11,14 @@ public class ThrowPhysics : MonoBehaviour
     public float throwForce = 5f;  // Force horizontale
     public float upwardForce = 2f; // Force verticale
 
+    public AudioSource audioSource;  // Ajout de l'AudioSource
+    public AudioClip throwSound;     // Ajout du son de lancer
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         grabInteractable = GetComponent<XRGrabInteractable>();
+        audioSource = GetComponent<AudioSource>(); 
 
         grabInteractable.onSelectExit.AddListener(OnRelease);
     }
@@ -44,10 +48,24 @@ public class ThrowPhysics : MonoBehaviour
 
         rb.velocity = direction.normalized * throwForce + Vector3.up * upwardForce;
 
-        // Emp�cher les rotations excessives
+        // Emp�cher les rotations excessives
         rb.angularVelocity = Vector3.zero;
+
+        PlayThrowSound();
 
         // Debug
         Debug.DrawRay(transform.position, rb.velocity, Color.red, 2f);
+    }
+
+     private void PlayThrowSound()
+    {
+        if (audioSource != null && throwSound != null)
+        {
+            audioSource.PlayOneShot(throwSound);
+        }
+        else
+        {
+            Debug.LogWarning("Aucun son assigné à ThrowPhysics !");
+        }
     }
 }
