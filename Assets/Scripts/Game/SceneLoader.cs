@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public float delayBeforeNextScene = 5.0f; // Time before switching automatically
+    public float delayBeforeNextScene = 5.0f;
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("SnowMountains JULIEN"); // Ensure this matches the actual scene name
+        SceneManager.LoadScene("GameOne");
     }
 
     public void LoadNextScene()
@@ -27,6 +27,11 @@ public class SceneLoader : MonoBehaviour
 
     public void AutoLoadNextScene()
     {
-        Invoke("LoadNextScene", delayBeforeNextScene); // Only called when needed
+        Invoke("LoadNextScene", delayBeforeNextScene);
+    }
+
+    void Start()
+    {
+        AutoLoadNextScene();
     }
 }
